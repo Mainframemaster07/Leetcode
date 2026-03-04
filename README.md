@@ -1,2 +1,7 @@
-# Leetcode
- My solutions to HackerRank problems
+# LEETCODE
+
+Solutions to problems on [LEETCODE](https://leetcode.com/)
+
+* [Java](#java)
+
+## Java
