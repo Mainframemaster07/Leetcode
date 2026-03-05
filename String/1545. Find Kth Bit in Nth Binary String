@@ -1,0 +1,22 @@
+class Solution {
+    String[] arr;
+    public char findKthBit(int n, int k) {
+        arr = new String[n];
+        arr[0]="0";
+        get(1,n-1);
+        return arr[n-1].charAt(k-1);
+    }
+    public void get(int a,int b){
+        if(a>b)return;
+        arr[a] = arr[a-1] +"1" +rev(arr[a-1]);
+        get(a+1,b);
+    }
+    public String rev(String b){
+        StringBuilder x = new StringBuilder();
+        for(int i=0;i<b.length();i++){
+            char p = (b.charAt(i)=='0')?'1':'0';
+            x.append(p);
+        }
+        return (x.reverse()).toString();
+    }
+}
