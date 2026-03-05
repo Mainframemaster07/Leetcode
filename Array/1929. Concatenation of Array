@@ -1,0 +1,19 @@
+class Solution {
+    /**
+     * Creates a concatenated array where the original array is repeated twice.
+     * Given an array nums of length n, returns a new array of length 2n where
+     * ans[i] = nums[i] for 0 <= i < n and ans[i] = nums[i - n] for n <= i < 2n.
+     * 
+     * @param nums the input array to be concatenated
+     * @return a new array containing two copies of the input array concatenated together
+     */
+    public int[] getConcatenation(int[] nums) {
+        int length = nums.length;
+        int[] result = new int[length * 2];
+        for (int i = 0; i < length * 2; i++) {
+            result[i] = nums[i % length];
+        }
+      
+        return result;
+    }
+}
