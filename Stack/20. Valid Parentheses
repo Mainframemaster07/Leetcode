@@ -1,0 +1,23 @@
+class Solution {
+    private boolean check(char left, char right) {
+        return (left == '(' && right == ')')
+            || (left == '{' && right == '}')
+            || (left == '[' && right == ']');
+    }
+    public boolean isValid(String s) {
+        Deque<Character> stack = new ArrayDeque<>();
+          for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            } else {
+                if (stack.isEmpty()) return false;
+                char left = stack.pop();
+                if (!check(left, ch)) {
+                    return false;
+            }
+      }
+ }
+        return stack.isEmpty();
+    }
+}
